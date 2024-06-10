@@ -4,8 +4,6 @@ import argparse
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
 
 def shorten_link(token, url):
     url_api_vk = 'https://api.vk.com/method/utils.getShortLink'
@@ -40,6 +38,8 @@ def is_shorten_link(url):
 
 
 def main():
+    load_dotenv()
+
     token = os.environ['VK_API_KEY']
 
     parser = argparse.ArgumentParser()
@@ -53,7 +53,7 @@ def main():
             clicks = count_clicks(token, short_link_path)
             print(f'По вашей ссылке перешли {clicks} раз')
         except requests.exceptions.HTTPError as error:
-            print(f'Ошибка: {error}')
+            print('Неправильно введена ссылка')
 
     else:
         try:
@@ -61,7 +61,7 @@ def main():
             print(short_link)
 
         except requests.exceptions.HTTPError as error:
-            print(f'Ошибка: {error}')
+            print('Неправильно введена ссылка')
 
 
 if __name__ == '__main__':
