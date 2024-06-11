@@ -9,9 +9,9 @@ Python3 должен быть установлен.
 ```
 pip install -r requirements.txt
 ```
-Требуется получить сервисный ключ (токен) для взаимодействия с API VK. Для этого создайте приложение в [личном кабинете сервиса авторизации VK ID](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/create-application). Сохраните свой ключ в .env и введите его в main.py
+Требуется получить сервисный ключ (токен) для взаимодействия с API VK. Для этого создайте приложение в [личном кабинете сервиса авторизации VK ID](https://id.vk.com/about/business/go/docs/ru/vkid/latest/vk-id/connection/create-application). Сохраните свой ключ в .env файл в формате
 ```
-token = os.environ['VK_API_KEY']
+VK_API_KEY = 'значение_ключа'
 ```
 Рекомендуется использовать [virtualenv/venv](https://docs.python.org/3/library/venv.html)
 
